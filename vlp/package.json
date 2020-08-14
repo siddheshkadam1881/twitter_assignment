@@ -1,0 +1,28 @@
+{
+  "name": "vlp",
+  "version": "0.0.1",
+  "private": true,
+  "description": "New Swagger API Project",
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "connect": "^3.3.5",
+    "crypto": "^1.0.1",
+    "express-logger": "0.0.3",
+    "express-validator": "^5.2.0",
+    "jsonwebtoken": "^8.3.0",
+    "swagger-connect": "^0.1.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "swagger project test"
+  }
+}
