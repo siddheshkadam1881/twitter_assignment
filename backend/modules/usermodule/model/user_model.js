@@ -23,7 +23,14 @@ const userSchema = new mongoose.Schema({
         unique: false,
         required: true
     },
-    
+    age:{
+        type: Number,
+        required: true
+    },
+    user_image:{
+        type: String,
+        default:"profile.png"
+    }
 }, {
     timestamps: true
 });
@@ -32,10 +39,9 @@ var userModel = mongoose.model('User', userSchema);
 // module.exports = userModel;
 
 
-
 exports.create = form_data => userModel.create(form_data);
 
-exports.findByName = form_data => userModel.findOne({name:form_data.name}).exec();
+exports.findByUserEmail = form_data => userModel.findOne({email:form_data.email}).exec();
 
 
 

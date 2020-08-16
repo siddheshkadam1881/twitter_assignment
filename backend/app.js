@@ -8,12 +8,20 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var db=require('./config/db');
 var routes=require('./modules/routes');
+var path = require('path');
 var port = process.env.PORT || 3000;
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+const fileUpload = require('express-fileupload');
+
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb' }));
 app.use(cors({
    exposedHeaders : ['x-auth-token']
 }));
+app.use(fileUpload({
+  limits: { fileSize: 50 * 1024 * 1024 },
+  useTempFiles: true,
+}));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api',routes);
 app.use(function(req, res, next){
   res.status(404);
@@ -29,7 +37,6 @@ app.use(function (err,req,res,next) {
     err: 'something blew up'
   });
 })
-
 
 app.listen(port,function()
 {

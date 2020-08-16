@@ -3,7 +3,16 @@ module.exports = class OfferValidator {
         let returnData = {
             name: "required",
             password: "required",
-            // max_limit: "required|numeric|max:99|digits_between:1,2"
+            email: "required|email",
+            age:"required|numeric"
+        };
+        return returnData;
+    }
+
+    login(){
+        let returnData = {
+            password: "required",
+            email: "required|email",
         };
         return returnData;
     }

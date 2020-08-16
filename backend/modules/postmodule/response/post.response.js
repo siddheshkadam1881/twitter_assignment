@@ -21,64 +21,63 @@ let response = {
             status_code: "CC400"
         }
     },
-    user_create_success: {
+    post_create_success: {
         EN: {
-            message: "user create success",
+            message: "post create success",
             status_code: "CC200"
         }
     },
-    existing_user: {
+    post_create_issue: {
         EN: {
-            message: "Existing User",
-            status_code: "CC200"
-        }
-    },
-    password_create_issue: {
-        EN: {
-            message: "Issue While Creating Password",
+            message: "Issue While Creating post",
             status_code: "CC400"
         }
     },
-    issue_creating_user: {
+    issue_creating_post: {
         EN: {
             message: "issue while creating user",
             status_code: "CC500"
         }
     },
-    user_fetch_error: {
+    post_not_found: {
         EN: {
-            message: "User fetch error",
+            message: "Post not mapped with User",
+            status_code: "CC400"
+        }
+    },
+    update_note: {
+        EN: {
+            message: "Update note successfully",
+            status_code: "CC200"
+        }
+    },
+    update_note_fail: {
+        EN: {
+            message: "update note fail",
+            status_code: "CC400"
+        }
+    },
+    note_fetch_error: {
+        EN: {
+            message: "issue while fetching note",
             status_code: "CC500"
         }
     },
-    invalid_password: {
+    get_notes: {
         EN: {
-            message: "Password Not Match",
-            status_code: "CC400"
+            message: "Get all Notes Successfully",
+            status_code: "CC200"
         }
     },
-    invalid_email: {
+    note_not_found:{
         EN: {
-            message: "Email Not Match",
-            status_code: "CC400"
-        }
-    },
-    image_validation: {
-        EN: {
-            message: "Only .png, .jpg and .jpeg format allowed!",
-            status_code: "CC400"
-        }
-    },
-    login_user_successfully:{
-        EN: {
-            message: "Login user successfully",
-            status_code: "CC400"
+            message: "Notes not found",
+            status_code: "CC200"
         }
     }
 }
 module.exports = response;
 module.exports.success = function (key, values, lang) {
-    console.log(lang)
     if (lang == undefined || lang == null) {
         lang = "EN"
     }
