@@ -1,36 +1,9 @@
-<div fxLayout="row" style="height:70px; margin-top:15px; background:SILVER" fxLayoutAlign="center center">
-  <div fxFlex="50">
-  </div>
-  <div fxFlex="30" fxLayoutAlign="center center">
-    <h1><strong>FUNDOO APP</strong></h1>
-  </div>
-  <div fxFlex="40" fxLayoutAlign="center center">
-    <img style="width:50px;" src="assets/icon/bridgelabz.png">
-  </div>
+<div class="login">
+    <form method="post">
+        <input type="text" name="u" placeholder="Email Id" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <input type="text" name="p" placeholder="Age" required="required" />
+        <input type="file" id="profile_picture" name="profile_picture" placeholder="Select Profile Picture">
+        <button type="submit" class="btn btn-primary btn-block btn-large">Sign Up</button>
+    </form>
 </div>
-
-
-<form class="form"  fxLayout="column" fxFlexAlign="auto" #signupForm="ngForm" (ngSubmit)="signupForm.form.valid && registerUser(signupForm.value)">
-  <div fxLayout="column" fxLayoutAlign="center center">
-    <div fxFlex="67">
-      <marquee><h4>SignUp Here...</h4></marquee>
-    </div>
-    <div fxFlex="17">
-    </div>
-  </div>
-    <mat-form-field class="full_width">
-         <input matInput placeholder="Enter your email" type="email"  name="email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  ngModel required />
-         <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-   </mat-form-field>
-
-  <div>
-    <mat-form-field class="full_width">
-   <input matInput placeholder="Enter your password"  type="password" name="userpass"   id ="userpass" ngModel required />
-   <mat-icon matSuffix (click)="hide = !hide"></mat-icon>
-   </mat-form-field>
-    </div>
-
-   <div class="button">
-      <button mat-button mat-raised-button color="primary" type="submit">SIGNUP</button>
-    </div>
- </form>
